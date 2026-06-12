@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सूर्यपुरा ग्राम विकास पोर्टल</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #E8690A;
+    --deep-green: #1A6B3A;
+    --earth: #7C4E1E;
+    --cream: #FDF6EC;
+    --sky: #D6EAF8;
+    --white: #ffffff;
+    --charcoal: #1C1C1C;
+    --muted: #6B6B6B;
+    --border: #E0D5C5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--deep-green);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-icon {
+    width: 40px; height: 40px;
+    background: var(--saffron);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .logo-text {
+    color: white;
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 17px;
+    line-height: 1.2;
+  }
+  .logo-text span {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: #a8d5b8;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  nav a {
+    color: #c8e6d4;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: white; }
+  .nav-btn {
+    background: var(--saffron);
+    color: white !important;
+    padding: 7px 16px;
+    border-radius: 6px;
+    font-size: 13px !important;
+  }
+
+  /* ── HERO BANNER ── */
+  .hero {
+    position: relative;
+    min-height: 540px;
+    background: linear-gradient(135deg, #0d3d22 0%, #1A6B3A 45%, #2d8a52 100%);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-sun {
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(232,105,10,0.35) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-fields {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 100px;
+    background: linear-gradient(180deg, transparent 0%, rgba(13,61,34,0.5) 100%);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 40px;
+    max-width: 680px;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(232,105,10,0.2);
+    border: 1px solid rgba(232,105,10,0.5);
+    color: #ffc57a;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 48px;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: #f9a846;
+  }
+  .hero p {
+    color: #a8d5b8;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 520px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--saffron);
+    color: white;
+    padding: 13px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(232,105,10,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(232,105,10,0.5); }
+  .btn-outline {
+    background: transparent;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); }
+
+  /* Stats row in hero */
+  .hero-stats {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+  }
+  .hero-stat {
+    flex: 1;
+    max-width: 200px;
+    text-align: center;
+    padding: 16px 20px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat strong {
+    display: block;
+    color: #f9a846;
+    font-size: 26px;
+    font-weight: 700;
+  }
+  .hero-stat span {
+    color: #c8e6d4;
+    font-size: 12px;
+  }
+
+  /* ── SECTION STYLES ── */
+  section {
+    padding: 64px 24px;
+  }
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section-label {
+    display: inline-block;
+    color: var(--saffron);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 34px;
+    color: var(--charcoal);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .section-sub {
+    color: var(--muted);
+    font-size: 15px;
+    max-width: 560px;
+    line-height: 1.6;
+    margin-bottom: 44px;
+  }
+
+  /* ── VIKAS CARDS ── */
+  .vikas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .vikas-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--border);
+  }
+  .vikas-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+  .vikas-card-img {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    position: relative;
+  }
+  .vikas-card-img.green { background: linear-gradient(135deg, #d4edda, #a8d5b8); }
+  .vikas-card-img.amber { background: linear-gradient(135deg, #fde8c8, #f9c97a); }
+  .vikas-card-img.blue  { background: linear-gradient(135deg, #d6eaf8, #aed6f1); }
+  .vikas-card-img.earth { background: linear-gradient(135deg, #f5e6d3, #e0c09a); }
+  .vikas-card-img.red   { background: linear-gradient(135deg, #fde8e8, #f5b7b1); }
+  .vikas-card-img.purple{ background: linear-gradient(135deg, #ede7f6, #c5b0e8); }
+  .progress-pill {
+    position: absolute;
+    bottom: 10px; right: 10px;
+    background: white;
+    border-radius: 12px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--deep-green);
+  }
+  .vikas-card-body { padding: 18px; }
+  .vikas-card-body h3 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 17px;
+    margin-bottom: 6px;
+    color: var(--charcoal);
+  }
+  .vikas-card-body p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+  .progress-bar {
+    height: 5px;
+    background: #eee;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    background: var(--deep-green);
+  }
+
+  /* ── KISAAN SECTION ── */
+  .kisaan-section {
+    background: linear-gradient(135deg, #0d3d22, #1A6B3A);
+    color: white;
+  }
+  .kisaan-section .section-title { color: white; }
+  .kisaan-section .section-sub { color: #a8d5b8; }
+  .kisaan-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .kisaan-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: background 0.2s;
+  }
+  .kisaan-card:hover { background: rgba(255,255,255,0.14); }
+  .kisaan-icon {
+    width: 50px; height: 50px;
+    background: rgba(232,105,10,0.25);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  .kisaan-card h4 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .kisaan-card p { font-size: 13px; color: #a8d5b8; line-height: 1.5; }
+
+  /* ── SAMACHAR ── */
+  .samachar-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+  .news-main {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .news-main-img {
+    height: 200px;
+    background: linear-gradient(135deg, #1A6B3A, #2d8a52);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 72px;
+  }
+  .news-main-body { padding: 22px; }
+  .news-tag {
+    display: inline-block;
+    background: #e8f5e9;
+    color: var(--deep-green);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  .news-main-body h3 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .news-main-body p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .news-meta { font-size: 12px; color: #aaa; margin-top: 12px; }
+
+  .news-list { display: flex; flex-direction: column; gap: 14px; }
+  .news-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s;
+  }
+  .news-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .news-emoji {
+    width: 44px; height: 44px;
+    background: var(--sky);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .news-item h4 { font-size: 14px; font-weight: 600; margin-bottom: 3px; line-height: 1.3; }
+  .news-item p { font-size: 12px; color: var(--muted); }
+
+  /* ── PANCHAYAT ── */
+  .panchayat-section {
+    background: #f0f7f3;
+  }
+  .panchayat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .panch-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  }
+  .panch-avatar {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+  }
+  .panch-avatar.a { background: #d4edda; }
+  .panch-avatar.b { background: #fde8c8; }
+  .panch-avatar.c { background: #d6eaf8; }
+  .panch-avatar.d { background: #ede7f6; }
+  .panch-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+  .panch-card p { font-size: 12px; color: var(--muted); }
+  .panch-role {
+    display: inline-block;
+    background: #e8f5e9;
+    color: var(--deep-green);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section { background: white; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+  .contact-info h3 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+  .contact-info p { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+  .contact-item-icon {
+    width: 38px; height: 38px;
+    background: #e8f5e9;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .contact-form { background: #f8faf9; border-radius: 14px; padding: 28px; border: 1px solid var(--border); }
+  .contact-form h4 { font-size: 17px; font-weight: 600; margin-bottom: 20px; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 500; margin-bottom: 6px; color: var(--charcoal); }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    color: var(--charcoal);
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--deep-green); }
+  .form-group textarea { height: 90px; resize: none; }
+  .form-submit {
+    width: 100%;
+    background: var(--deep-green);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+  }
+  .form-submit:hover { background: #155c30; }
+
+  /* ── SOCIAL MEDIA POSTS ── */
+  .social-section { background: var(--cream); }
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .social-post {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    font-family: 'Inter', sans-serif;
+  }
+  /* Post 1 */
+  .post-1 {
+    background: linear-gradient(160deg, #0d3d22 0%, #1A6B3A 60%, #f9a846 100%);
+    padding: 28px 24px;
+    color: white;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .post-1-top { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .post-1-logo {
+    width: 36px; height: 36px;
+    background: var(--saffron);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .post-1-name { font-size: 13px; font-weight: 600; color: #c8e6d4; }
+  .post-1 h2 {
+    font-family: 'Tiro Devanagari Hindi', serif;
+    font-size: 26px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .post-1 p { font-size: 13px; color: #a8d5b8; line-height: 1.5; margin-bottom: 18px; }
+  .post-1-stats { display: flex; gap: 18px; }
+  .post-stat { text-align: center; }
+  .post-stat strong { display: block; font-size: 22px; color: #f9a846; }
+  .post-stat span { font-size: 10px; color: #a8d5b8; }
+  .post-hashtag { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 14px; }
+
+  /* Post 2 */
+  .post-2 {
+    background: #fff8ee;
+    border: 1px solid #f0d9b5;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+  }
+  .post-2-header {
+    background: var(--saffron);
+    padding: 16px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .post-2-header h3 { font-family: 'Tiro Devanagari Hindi', serif; font-size: 18px; }
+  .post-2-header span { font-size: 11px; opacity: 0.85; }
+  .post-2-body { padding: 20px; flex: 1; }
+  .post-2-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0d9b5;
+  }
+  .post-2-item:last-child { border-bottom: none; }
+  .post-2-item .emoji { font-size: 22px; width: 32px; text-align: center; }
+  .post-2-item .text strong { display: block; font-size: 14px; color: var(--charcoal); }
+  .post-2-item .text span { font-size: 12px; color: var(--muted); }
+  .post-2-footer {
+    background: var(--deep-green);
+    padding: 12px 20px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    color: #ccc;
+    padding: 40px 24px 20px;
+  }
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+  .footer-brand p { font-size: 13px; line-height: 1.7; color: #999; margin-top: 12px; }
+  .footer-col h5 { color: white; font-size: 14px; font-weight: 600; margin-bottom: 14px; }
+  .footer-col a { display: block; color: #999; font-size: 13px; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+  .footer-col a:hover { color: #f9a846; }
+  .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .social-links { display: flex; gap: 10px; }
+  .social-link {
+    width: 32px; height: 32px;
+    background: #333;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .social-link:hover { background: var(--saffron); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 30px; }
+    .hero-content { padding: 40px 20px 80px; }
+    .hero-stats { flex-wrap: wrap; }
+    .hero-stat { min-width: 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    nav { display: none; }
+    .vikas-grid { grid-template-columns: 1fr; }
+    .kisaan-grid { grid-template-columns: 1fr; }
+    .samachar-grid { grid-template-columns: 1fr; }
+    .panchayat-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    .social-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .section-title { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <div class="logo-icon">🌻</div>
+    <div class="logo-text">
+      सूर्यपुरा ग्राम विकास पोर्टल
+      <span>Gram Panchayat • Rajasthan</span>
+    </div>
+  </div>
+  <nav>
+    <a href="#">विकास कार्य</a>
+    <a href="#">किसान सेवा</a>
+    <a href="#">समाचार</a>
+    <a href="#">पंचायत</a>
+    <a href="#" class="nav-btn">संपर्क करें</a>
+  </nav>
+</header>
+
+<!-- HERO BANNER -->
+<section class="hero" style="padding:0;">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-sun"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🌿 Digital Gram India</div>
+    <h1>सूर्यपुरा — <em>विकास की</em><br>नई सुबह</h1>
+    <p>शिक्षा, किसानी, सड़क और स्वास्थ्य — हर क्षेत्र में आगे बढ़ रहा है हमारा गांव। यहाँ जुड़िए, जानिए और बदलाव का हिस्सा बनिए।</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">विकास कार्य देखें</a>
+      <a href="#" class="btn-outline">पंचायत से जुड़ें</a>
+    </div>
+  </div>
+  <div class="hero-fields"></div>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>4,200+</strong><span>ग्रामवासी</span></div>
+    <div class="hero-stat"><strong>18</strong><span>विकास योजनाएं</span></div>
+    <div class="hero-stat"><strong>92%</strong><span>साक्षरता दर</span></div>
+    <div class="hero-stat"><strong>₹48L</strong><span>इस वर्ष निवेश</span></div>
+  </div>
+</section>
+
+<!-- VIKAS KARYA -->
+<section>
+  <div class="section-inner">
+    <span class="section-label">विकास कार्य</span>
+    <h2 class="section-title">सूर्यपुरा में चल रहे प्रमुख कार्य</h2>
+    <p class="section-sub">हर परियोजना की जानकारी, प्रगति और लाभार्थी — एक ही जगह पर।</p>
+    <div class="vikas-grid">
+      <div class="vikas-card">
+        <div class="vikas-card-img green">🏫<div class="progress-pill">85% पूर्ण</div></div>
+        <div class="vikas-card-body">
+          <h3>नया प्राथमिक विद्यालय</h3>
+          <p>6 कमरे, पुस्तकालय और स्मार्ट क्लास के साथ नया भवन निर्माणाधीन।</p>
+          <div class="progress-bar"><div class="progress-fill" style="width:85%; background:#1A6B3A;"></div></div>
+        </div>
+      </div>
+      <div class="vikas-card">
+        <div class="vikas-card-img amber">🌾<div class="progress-pill">60% पूर्ण</div></div>
+        <div class="vikas-card-body">
+          <h3>सिंचाई नहर परियोजना</h3>
+          <p>500 एकड़ खेत को पानी मिलेगा — 320 परिवारों को सीधा लाभ।</p>
+          <div class="progress-bar"><div class="progress-fill" style="width:60%; background:#E8690A;"></div></div>
+        </div>
+      </div>
+      <div class="vikas-card">
+        <div class="vikas-card-img blue">🛣️<div class="progress-pill">100% पूर्ण</div></div>
+        <div class="vikas-card-body">
+          <h3>मुख्य मार्ग सड़क निर्माण</h3>
+          <p>4.2 किमी पक्की सड़क बनकर तैयार — आवागमन अब आसान।</p>
+          <div class="progress-bar"><div class="progress-fill" style="width:100%; background:#2196F3;"></div></div>
+        </div>
+      </div>
+      <div class="vikas-card">
+        <div class="vikas-card-img earth">🏥<div class="progress-pill">40% पूर्ण</div></div>
+        <div class="vikas-card-body">
+          <h3>उपस्वास्थ्य केंद्र उन्नयन</h3>
+          <p>24×7 सेवा के लिए नया उपकरण और प्रशिक्षित नर्स की तैनाती।</p>
+          <div class="progress-bar"><div class="progress-fill" style="width:40%; background:#7C4E1E;"></div></div>
+        </div>
+      </div>
+      <div class="vikas-card">
+        <div class="vikas-card-img red">💧<div class="progress-pill">70% पूर्ण</div></div>
+        <div class="vikas-card-body">
+          <h3>शुद्ध पेयजल योजना</h3>
+          <p>हर घर नल कनेक्शन — 840 परिवारों को स्वच्छ पानी का लक्ष्य।</p>
+          <div class="progress-bar"><div class="progress-fill" style="width:70%; background:#E53935;"></div></div>
+        </div>
+      </div>
+      <div class="vikas-card">
+        <div class="vikas-card-img purple">⚡<div class="progress-pill">90% पूर्ण</div></div>
+        <div class="vikas-card-body">
+          <h3>सौर ऊर्जा ग्राम योजना</h3>
+          <p>180 घरों में सोलर पैनल — बिजली बिल शून्य का सपना साकार।</p>
+          <div class="progress-bar"><div class="progress-fill" style="width:90%; background:#7B1FA2;"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KISAAN SEVA -->
+<section class="kisaan-section">
+  <div class="section-inner">
+    <span class="section-label" style="color:#f9a846;">🌾 किसान सेवा</span>
+    <h2 class="section-title">किसान भाइयों के लिए सुविधाएं</h2>
+    <p class="section-sub">खेती से जुड़ी हर जानकारी और सरकारी योजना यहाँ उपलब्ध है।</p>
+    <div class="kisaan-grid">
+      <div class="kisaan-card">
+        <div class="kisaan-icon">🌱</div>
+        <div>
+          <h4>फसल मौसम सलाह</h4>
+          <p>खरीफ सीजन में बाजरा, मूंग और तिल की खेती के लिए विशेषज्ञ सुझाव।</p>
+        </div>
+      </div>
+      <div class="kisaan-card">
+        <div class="kisaan-icon">💰</div>
+        <div>
+          <h4>PM-KISAN लाभार्थी</h4>
+          <p>इस वर्ष 680 किसानों को ₹6,000 की सहायता राशि सीधे खाते में।</p>
+        </div>
+      </div>
+      <div class="kisaan-card">
+        <div class="kisaan-icon">🚜</div>
+        <div>
+          <h4>कृषि यंत्र बैंक</h4>
+          <p>ट्रैक्टर, थ्रेशर और स्प्रेयर किराए पर — बुकिंग पंचायत से करें।</p>
+        </div>
+      </div>
+      <div class="kisaan-card">
+        <div class="kisaan-icon">📊</div>
+        <div>
+          <h4>मंडी भाव लाइव</h4>
+          <p>आज सरसों ₹5,420/क्विंटल · गेहूं ₹2,280/क्विंटल · जौ ₹1,950/क्विंटल</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMACHAR -->
+<section>
+  <div class="section-inner">
+    <span class="section-label">📰 स्थानीय समाचार</span>
+    <h2 class="section-title">सूर्यपुरा की ताज़ा खबरें</h2>
+    <p class="section-sub">गांव में क्या हो रहा है — रहिए हमेशा अपडेट।</p>
+    <div class="samachar-grid">
+      <div class="news-main">
+        <div class="news-main-img">🎓</div>
+        <div class="news-main-body">
+          <span class="news-tag">शिक्षा</span>
+          <h3>सूर्यपुरा के 12 बच्चों का जिले में पहला स्थान — गांव ने मनाया जश्न</h3>
+          <p>इस वर्ष की बोर्ड परीक्षाओं में हमारे विद्यालय के बच्चों ने उत्कृष्ट प्रदर्शन किया। सरपंच ने सभी बच्चों को प्रोत्साहन राशि देने की घोषणा की।</p>
+          <div class="news-meta">📅 10 जून 2025 · ग्राम पंचायत</div>
+        </div>
+      </div>
+      <div class="news-list">
+        <div class="news-item">
+          <div class="news-emoji">🛣️</div>
+          <div>
+            <h4>मुख्य सड़क का उद्घाटन 15 जून को</h4>
+            <p>जिला कलेक्टर करेंगे उद्घाटन · ग्रामवासी आमंत्रित</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="news-emoji">💉</div>
+          <div>
+            <h4>स्वास्थ्य शिविर 20 जून को</h4>
+            <p>निःशुल्क जांच · 8 विशेषज्ञ डॉक्टर उपस्थित रहेंगे</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="news-emoji">🌧️</div>
+          <div>
+            <h4>मानसून पूर्व तैयारी बैठक</h4>
+            <p>जल निकासी और फसल बीमा पर चर्चा · 18 जून</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <div class="news-emoji">🏆</div>
+          <div>
+            <h4>सूर्यपुरा को "उत्तम ग्राम" पुरस्कार</h4>
+            <p>स्वच्छता अभियान में राज्य स्तर पर तीसरा स्थान</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PANCHAYAT -->
+<section class="panchayat-section">
+  <div class="section-inner">
+    <span class="section-label">🏛️ पंचायत</span>
+    <h2 class="section-title">आपके जनप्रतिनिधि</h2>
+    <p class="section-sub">सूर्यपुरा की पंचायत — आपकी सेवा में समर्पित।</p>
+    <div class="panchayat-grid">
+      <div class="panch-card">
+        <div class="panch-avatar a">👨‍💼</div>
+        <h4>रामलाल मीणा</h4>
+        <p>मो. 98290-XXXXX</p>
+        <span class="panch-role">सरपंच</span>
+      </div>
+      <div class="panch-card">
+        <div class="panch-avatar b">👩‍💼</div>
+        <h4>सुनीता देवी</h4>
+        <p>मो. 94140-XXXXX</p>
+        <span class="panch-role">उप सरपंच</span>
+      </div>
+      <div class="panch-card">
+        <div class="panch-avatar c">👨‍🌾</div>
+        <h4>महेश कुमार</h4>
+        <p>मो. 70140-XXXXX</p>
+        <span class="panch-role">वार्ड पंच</span>
+      </div>
+      <div class="panch-card">
+        <div class="panch-avatar d">👩‍🏫</div>
+        <h4>कमला बाई</h4>
+        <p>मो. 82090-XXXXX</p>
+        <span class="panch-role">वार्ड पंच</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA POSTS -->
+<section class="social-section">
+  <div class="section-inner">
+    <span class="section-label">📱 Social Media Posts</span>
+    <h2 class="section-title">ग्राम पोर्टल — Social Posts</h2>
+    <p class="section-sub">इन posts को Facebook / WhatsApp / Instagram पर share करें।</p>
+    <div class="social-grid">
+      <!-- Post 1 -->
+      <div class="social-post">
+        <div class="post-1">
+          <div>
+            <div class="post-1-top">
+              <div class="post-1-logo">🌻</div>
+              <span class="post-1-name">सूर्यपुरा ग्राम विकास पोर्टल</span>
+            </div>
+            <h2>हमारा गांव<br>बदल रहा है!</h2>
+            <p>डिजिटल पहचान, शिक्षा, किसान सेवा और विकास — सब एक जगह।</p>
+          </div>
+          <div>
+            <div class="post-1-stats">
+              <div class="post-stat"><strong>18</strong><span>योजनाएं</span></div>
+              <div class="post-stat"><strong>4.2K</strong><span>ग्रामवासी</span></div>
+              <div class="post-stat"><strong>92%</strong><span>साक्षर</span></div>
+            </div>
+            <p class="post-hashtag">#SuryapuraGram #DigitalVillage #GramVikas #RajasthanGram</p>
+          </div>
+        </div>
+      </div>
+      <!-- Post 2 -->
+      <div class="social-post">
+        <div class="post-2">
+          <div class="post-2-header">
+            <div>
+              <h3>किसान भाइयों के लिए</h3>
+              <span>आज के मंडी भाव — 12 जून 2025</span>
+            </div>
+            <span style="font-size:28px; margin-left:auto;">🌾</span>
+          </div>
+          <div class="post-2-body">
+            <div class="post-2-item">
+              <span class="emoji">🟡</span>
+              <div class="text"><strong>सरसों</strong><span>₹5,420 / क्विंटल ↑</span></div>
+            </div>
+            <div class="post-2-item">
+              <span class="emoji">🟤</span>
+              <div class="text"><strong>गेहूं</strong><span>₹2,280 / क्विंटल →</span></div>
+            </div>
+            <div class="post-2-item">
+              <span class="emoji">🟢</span>
+              <div class="text"><strong>मूंग</strong><span>₹7,850 / क्विंटल ↑</span></div>
+            </div>
+            <div class="post-2-item">
+              <span class="emoji">⚪</span>
+              <div class="text"><strong>जौ</strong><span>₹1,950 / क्विंटल ↓</span></div>
+            </div>
+          </div>
+          <div class="post-2-footer">📲 सूर्यपुरा ग्राम पोर्टल पर रोज़ देखें</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="section-inner">
+    <span class="section-label">📞 संपर्क</span>
+    <h2 class="section-title">हमसे जुड़ें</h2>
+    <p class="section-sub">कोई भी समस्या, सुझाव या जानकारी के लिए नीचे contact करें।</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>पंचायत कार्यालय</h3>
+        <p>सोमवार से शनिवार, सुबह 9 बजे से शाम 5 बजे तक। आपकी हर समस्या का समाधान हमारी प्राथमिकता है।</p>
+        <div class="contact-item"><div class="contact-item-icon">📍</div><span>सूर्यपुरा, तहसील — जयपुर, राजस्थान 302001</span></div>
+        <div class="contact-item"><div class="contact-item-icon">📞</div><span>01412-XXXXXX (पंचायत कार्यालय)</span></div>
+        <div class="contact-item"><div class="contact-item-icon">📱</div><span>98290-XXXXX (सरपंच)</span></div>
+        <div class="contact-item"><div class="contact-item-icon">✉️</div><span>suryapura.gram@rajasthan.gov.in</span></div>
+      </div>
+      <div class="contact-form">
+        <h4>📝 संदेश भेजें</h4>
+        <div class="form-group">
+          <label>आपका नाम</label>
+          <input type="text" placeholder="जैसे: राम सिंह मीणा">
+        </div>
+        <div class="form-group">
+          <label>मोबाइल नंबर</label>
+          <input type="tel" placeholder="98XXXXXXXX">
+        </div>
+        <div class="form-group">
+          <label>विषय</label>
+          <select><option>विकास कार्य</option><option>किसान समस्या</option><option>शिकायत</option><option>अन्य</option></select>
+        </div>
+        <div class="form-group">
+          <label>संदेश</label>
+          <textarea placeholder="अपनी बात यहाँ लिखें..."></textarea>
+        </div>
+        <button class="form-submit">संदेश भेजें →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">🌻</div>
+          <div class="logo-text" style="color:white;">
+            सूर्यपुरा ग्राम विकास पोर्टल
+            <span>Gram Panchayat • Rajasthan</span>
+          </div>
+        </div>
+        <p>डिजिटल भारत के तहत सूर्यपुरा ग्राम पंचायत का आधिकारिक पोर्टल। गांव की पहचान, विकास और जानकारी एक जगह।</p>
+      </div>
+      <div class="footer-col">
+        <h5>त्वरित लिंक</h5>
+        <a href="#">विकास कार्य</a>
+        <a href="#">किसान सेवा</a>
+        <a href="#">स्थानीय समाचार</a>
+        <a href="#">पंचायत सदस्य</a>
+      </div>
+      <div class="footer-col">
+        <h5>सरकारी सेवाएं</h5>
+        <a href="#">जन आधार</a>
+        <a href="#">PM-KISAN</a>
+        <a href="#">राशन कार्ड</a>
+        <a href="#">ई-श्रम</a>
+      </div>
+      <div class="footer-col">
+        <h5>Social Media</h5>
+        <a href="#">📘 Facebook</a>
+        <a href="#">📸 Instagram</a>
+        <a href="#">💬 WhatsApp Group</a>
+        <a href="#">▶️ YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 सूर्यपुरा ग्राम पंचायत · सर्वाधिकार सुरक्षित</span>
+      <span>🇮🇳 Digital India Initiative</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
